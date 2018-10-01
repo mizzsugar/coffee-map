@@ -1,0 +1,17 @@
+{% extends "navigation.html" %}
+{% block container %}
+<h1>はじめまして。</h1>
+<p>こちらは、仮登録画面です。入力されたメールアドレスに本登録用のURLを案内しますので、そちらより本登録を行ってください。</p>
+<form action="/send_mail" enctype="multipart/form-data" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    {{ send_mail_form }}
+  </div>
+  <button type="submit" class="btn btn-primary btn-lg btn-block">メール送信</button>
+</form>
+
+
+<div id="mapid"></div>
+
+
+{% endblock %}

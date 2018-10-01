@@ -1,0 +1,25 @@
+{% extends "navigation.html" %}
+{% block container %}
+<br>
+<hr>
+{% load static %}
+{% for cafe in cafes %}
+<div class="cafe-list one-post">
+    <h2><a href="/introdoce_cafe/{{ cafe.cafe_id }}" class="cafe-name-in-cafelist">{{ cafe.cafe_name }}</a></h2>
+    <p><label class="cafe-label">エリア</label></p>
+    <p><label class="cafe-label">営業時間</label>{{ cafe.work_time }}</p>
+    <hr>
+            <ul style="margin-bottom:250px;">
+                    {% load static %}
+                    {% for photo in cafe.photo_list %}
+                    <li><div class="cafe-img-sample"><img src="{% static photo.file_path %}" class="center"></div></li>
+                    {% empty %}
+                    <li><div class="cafe-img-sample"><p class="no-photo">No Photo</p></div></li>
+                    {% endfor %}
+            </ul>
+<hr>
+</div>
+
+
+{% endfor %}
+{% endblock %}

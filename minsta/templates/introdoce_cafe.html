@@ -1,0 +1,88 @@
+{% extends "navigation.html" %}
+{% block container %}
+<br>
+<div class="one-post">
+    <h1><b>{{ cafe.cafe_name }}</b></h1>
+    <br>
+    <p>{{ cafe.comment }}</p>
+</div>
+
+<div style="padding-bottom:200px">
+    <ul class="one-post">
+        {% load static %}
+        {% for cafe_photo in cafe_photos %}
+        <li><div class="cafe-img-sample"><img src="{% static cafe_photo.file_path %}" class="center"></div></li>
+        {% empty %}
+        <li><div class="cafe-img-sample"><p class="no-photo">No Photo</p></div></li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+<h2 style="padding-top:5rem;">お店情報</h2>
+<div class="one-post"></div> 
+<hr style="color:#afa993;">
+    <table class="c-table c-table--form rstinfo-table__table">
+            <tbody>
+              <tr>
+                <th>店名</th>
+                <td>
+                  
+                        {{ cafe.cafe_name }}
+                  
+                </td>
+              </tr>
+      
+      
+              <tr>
+                <th>営業時間</th>
+                <td>
+                        {{ cafe.work_time }}
+                </td>
+              </tr>
+                <tr>
+                  <th>
+                      ホームページ
+                  </th>
+                  <td>
+                        <a href="{{ cafe.hp }}">{{ cafe.hp }}</a>
+      
+                  </td>
+                </tr>
+      
+                <tr>
+                  <th>facebook</th>
+                  <td>
+                        <a href="{{ cafe.facebook }}">{{ cafe.facebook }}</a>
+      
+                  </td>
+                </tr>
+                <tr>
+                  <th>instagram</th>
+                  <td>
+                    <a href="{{ cafe.instagram }}">{{ cafe.instagram }}</a>
+                  </td>
+                </tr>
+              <tr>
+                <th>twitter</th>
+                <td>
+                        <a href="{{ cafe.twitter }}">{{ cafe.twitter }}</a>
+                </td>
+              </tr>
+              <tr>
+                <th>住所</th>
+                <td>
+                    {{ cafe.location}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+</div>
+
+<div class="one-post">
+<h2 style="margin-top:3rem;">地図情報</h2>
+    <hr>
+    <div id="mapid"></div>
+</div>
+
+{% endblock %}

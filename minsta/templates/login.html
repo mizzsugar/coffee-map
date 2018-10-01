@@ -1,0 +1,21 @@
+{% extends "navigation.html" %}
+{% block container %}
+<h1>ようこそ</h1>
+<form action="/login" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+        <div class="form-group">
+          <label>{{ login_form.username.label }}</label>
+          {{ login_form.username }}
+        </div>
+        <div class="form-group">
+          <label>{{ login_form.password.label }}</label>
+          {{ login_form.password }}
+          {{ login_form.password.errors }}
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">ログイン</button>
+</form>
+
+    <a href="/send_mail" id="registration-button" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true">新規登録</a>
+    <a href="/forget_password_request">パスワードを忘れた方はこちら</a>
+
+{% endblock %}

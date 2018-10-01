@@ -1,0 +1,16 @@
+仮登録者様
+
+こんにちは。CoffeeMap事務局です。
+仮登録を行っていただき、ありがとうございます。
+
+本登録は、下記URLからおこなってください。
+
+https://coffee.sugar-code.space/registration_user/{{ register_uuid }}
+
+
+なお、このURLの有効期限はメールが送信されてから24時間となります。
+
+有効期限が過ぎましたら、お手数おかけしますが、
+下記URLより再度仮登録を行っていただくようお願いします。
+
+https://coffee.sugar-code.space/send_mail

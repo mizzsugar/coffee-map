@@ -1,0 +1,35 @@
+{% extends "navigation.html" %}
+{% block container %}
+
+<form action="/post_new_post" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <br>
+      <label>{{ form.file.label }}</label>
+      <br>
+      <img id="preview">
+      <br>
+      <label id="file-selector-label" for="id_file">
+        ファイルを選択
+      {{ form.file }}
+    </label>
+    <div><canvas id="thumbnail" width="10" height="10"></canvas></div>
+    <div id="message"></div>
+    <br>
+    </div>
+
+    <div class="form-group">
+      <label>{{ form.cafe.label }}</label>
+      <br>
+      {{ form.cafe }}
+    </div>
+
+
+    <div class="form-group">
+      <label>{{ form.comment.label }}</label>
+      
+      {{ form.comment }}
+    </div>
+    <input type="button" id="post-button" value="投稿" class="btn btn-primary btn-lg btn-block">
+</form>
+{% endblock %}

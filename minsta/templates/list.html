@@ -1,0 +1,19 @@
+{% extends "navigation.html" %}
+{% block container %}
+<br>
+<br>
+<p>美味しいコーヒーが飲める場所を教え合うためのWebサービス。2018/09/22にユーザー登録できるようバージョンアップしました！</p>
+<hr>
+{% load static %}
+
+{% for post in posts %}
+<div class="one-post">
+    <p>posted by <a href="/user_page/{{ post.user.username }}" class="user-name">{{ post.user.username }}</a></p>
+    <a href="/introdoce_cafe/{{ post.cafe_id }}" class="cafe-name">{{ post.cafe.cafe_name }}</a>
+    <img src="{% static post.file_path %}" class="center">
+    <p>{{ post.comment }}</p>
+    <p class="date-comment">{{ post.posted_at }}</p>
+    <hr>
+</div>
+{% endfor %}
+{% endblock %}

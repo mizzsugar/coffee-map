@@ -1,0 +1,70 @@
+[
+    {
+        "model": "minsta.cafe",
+        "pk": 1,
+        "fields": {
+          "location": "東京都港区赤坂3-6-18 赤坂ニューロイヤルビル 1F",
+          "latitude": 35.6741432,
+          "longitude": 139.737975,
+          "cafe_name": "注文焙煎 豆虎 赤坂焙煎所",
+          "comment": "赤坂の老舗焙煎所。様々な産地のコーヒー豆が生豆から販売しています。50gから購入できます。",
+          "hp": "https://www.mametora.jp/shopinfo",
+          "facebook": "https://www.facebook.com/mametoraakasaka/",
+          "instagram": "",
+          "twitter": "https://twitter.com/mametoracoffee",
+          "work_time": "［月～金］11:00～20:00　［土・日］11:00～19:00　無休",
+          "area": "赤坂・溜池山王・永田町"
+        }
+      },
+      {
+        "model": "minsta.cafe",
+        "pk": 2,
+        "fields": {
+          "location": "東京都渋谷区渋谷1-15-19 二葉ビル 2F",
+          "latitude": 35.6604767,
+          "longitude": 139.7027318,
+          "cafe_name": "茶亭 羽當",
+          "comment": "渋谷の知る人ぞ知る喫茶店。美味しい珈琲、こだわり抜いたアンティークなインテリア、静かな空気感・・・　違う世界に訪れるような体験ができます。",
+          "hp": " http://osietesite.com/gourmet/tokyo/cafe-tokyo/chatehato",
+          "facebook": "",
+          "instagram": "",
+          "twitter": "https://twitter.com/takimotocoffee",
+          "work_time": "11:00～23:30(L.O.23:00) 無休",
+          "area": "渋谷・恵比寿・代官山"
+        }
+      },
+    {
+        "model": "minsta.cafe",
+        "pk": 3,
+        "fields": {
+          "location": "東京都千代田区内神田３丁目２４−７",
+          "latitude": 35.6922598,
+          "longitude": 139.7694065,
+          "cafe_name": "自家焙煎 瀧本珈琲",
+          "comment": "神田の小さな自家焙煎珈琲店。しらすトーストを初めてする、和風なフードメニューが特徴的です。",
+          "hp": "",
+          "facebook": "https://ja-jp.facebook.com/takimotocoffee/",
+          "instagram": "",
+          "twitter": "https://twitter.com/takimotocoffee",
+          "work_time": "[月～金] 7:30～17:00 [土] 11:00～16:00 日曜日・祝日休み",
+          "area": "神田・秋葉原・水道橋"
+        }
+      },
+      {
+        "model": "minsta.cafe",
+        "pk": 4,
+        "fields": {
+          "location": "東京都世田谷区三軒茶屋2-13-19",
+          "latitude": 35.6430639,
+          "longitude": 139.6703623,
+          "cafe_name": "自家製焙煎　蔵味",
+          "comment": "イタリアントマト系列の自家焙煎珈琲店。7種類のコーヒーを、ハンドドリップやサイフォンなど好みの抽出方法で淹れてくれます。",
+          "hp": "https://www.italiantomato.co.jp/store/it264/",
+          "facebook": "",
+          "instagram": "",
+          "twitter": "",
+          "work_time": "7:30～22:00 定休日なし",
+          "area": "池尻大橋・三軒茶屋・駒澤大学"
+        }
+      }  
+    ]

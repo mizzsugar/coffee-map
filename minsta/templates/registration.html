@@ -1,0 +1,27 @@
+{% extends "minsta.html" %}
+{% block content1 %}
+{{ form.non_field_errors }}
+<h1>Welcome, New Comer</h1>
+{{ form.non_field_errors }}
+<form action="/registration_user/{{ register_uuid }}" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label>{{ registration_form.username.label }}</label>
+      {{ registration_form.username }}
+      {{ registration_form.username.errors }}
+    </div>
+    <div class="form-group">
+      <label>{{ registration_form.password.label }}</label>
+      {{ registration_form.password }}
+      {{ registration_form.password.errors }}
+    </div>
+    <div class="form-group">
+        <label>{{ registration_form.email.label }}</label>
+        {{ registration_form.email }}
+        {{ registration_form.email.errors }}
+      </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">登録</button>
+</form>
+
+
+{% endblock %}

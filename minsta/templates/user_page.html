@@ -1,0 +1,72 @@
+{% extends "navigation.html" %}
+{% block container %}
+<br>
+<br>
+<p>美味しいコーヒーが飲める場所を教え合うためのWebサービス。残念ながら、まだ中の人しか投稿できません。8月中にバージョンアップして他の方も投稿できるようにします。</p>
+<hr>
+{% load static %}
+<h2>{{ user.username }}</h2>
+<br>
+
+<ul class="nav nav-tabs">
+	<li><a href="#sampleContentA" class="cafe-name" data-toggle="tab">ブロック</a></li>
+	<li class ="active user-page-tab"><a href="#sampleContentB" class="cafe-name" data-toggle="tab">リスト</a></li>
+</ul>
+<!-- TODO: タブの枠線が表示されないのでつけたい -->
+
+<!-- タブ内容 -->
+<div class="tab-content">
+
+  <div class="tab-pane active" id="sampleContentA">
+    <!-- モーダルウィンドウの中身 -->
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title" id="myModalLabel">プレビュー</h4>
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          </div>
+          <div class="modal-body">
+            <img src="" id="imagepreview" class="img-responsive" >
+          </div>
+          <div>
+            aaaaaaaa
+            aaaaaaaa
+            aaaaaaaa
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 画像一覧 -->
+    <div style="padding-bottom:200px">
+        <ul class="one-post">
+          {% load static %}
+            {% for post in posts %}
+            <li><div class="user-page-img modal-open"><a href="#"><img src="{% static post.file_path %}" class="center" onclick="pop(this)"></a></div></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+<!-- リスト -->
+<div class="tab-pane" id="sampleContentB">
+{% for post in posts %}
+<div class="one-post">
+    <p>posted by <a href="/user_page/{{ post.user.username }}" class="user-name">{{ post.user.username }}</a></p>
+    <a href="/introdoce_cafe/{{ post.cafe_id }}" class="cafe-name">{{ post.cafe.cafe_name }}</a>
+    <img src="{% static post.file_path %}" class="center">
+    <p>{{ post.comment }}</p>
+    <p class="date-comment">{{ post.posted_at }}</p>
+    <hr>
+</div>
+{% endfor %}
+</div>
+
+</div>
+{% endblock %}
